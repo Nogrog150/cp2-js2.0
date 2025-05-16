@@ -23,13 +23,11 @@ function startTimer() {
         return minutes;
       }
     } else {
-      // Essa função já existe no js por isso nao foi declarada
       clearInterval(intervalId);
       seconds = 0;
       minutes = 0;
       updatingDisplay();
       alert("Interaja com o site");
-      // Reiniciar o timer
       intervalId = startTimer()
       return;
     }
@@ -39,10 +37,14 @@ function startTimer() {
 }
 let intervalId = startTimer();
 
-body.addEventListener('click', () => {
+const resetTimer = () => {
   clearInterval(intervalId);
   seconds = 0;
   minutes = 0;
   updatingDisplay();
   intervalId = startTimer();
-});
+}
+
+body.addEventListener('click', resetTimer);
+body.addEventListener('input', resetTimer);
+body.addEventListener('mouseover', resetTimer);
