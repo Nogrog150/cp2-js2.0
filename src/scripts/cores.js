@@ -23,7 +23,11 @@ function obterCodigoHex(nome) {
     const coresPredefinidas = {
         red: '#FF0000',
         blue: '#0000FF',
-        purple: '#800080'
+        purple: '#800080',
+        yellow: '#FFFF00',
+        green: '#008000',
+        orange: '#FFA500',
+        pink: '#FFC0CB',
     };
     return coresPredefinidas[nome.toLowerCase()] || nome; // Retorna o código ou o próprio nome
 }
