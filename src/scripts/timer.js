@@ -25,18 +25,11 @@ function updatingDisplay() {
 function startTimer() {
   updatingDisplay();
   return setInterval(() => {
-    if (seconds < 10) {
-      seconds++;
-      totalSeconds++;
-      
-    } else {
-      clearInterval(intervalId);
+    seconds++;
+    totalSeconds++;
+    if (seconds >= 60) {
       seconds = 0;
-      minutes = 0;
-      updatingDisplay();
-      alert("Interaja com o site");
-      intervalId = startTimer();
-      return;
+      minutes++;
     }
     updatingDisplay();
   }, 1000);
